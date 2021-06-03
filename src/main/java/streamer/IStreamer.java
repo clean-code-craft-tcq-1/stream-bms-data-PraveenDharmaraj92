@@ -10,6 +10,6 @@ import java.util.List;
  */
 public interface IStreamer {
 
-	public void stream(List<String> commaSeparatedValueList);
+	public void stream(List<String> commaSeparatedValueList) throws Exception;
 
 }

@@ -16,15 +16,11 @@ public class ConsoleStreamer implements IStreamer {
 	 * @see streamer.IStreamer#stream(java.util.List)
 	 */
 	@Override
-	public void stream(List<String> commaSeparatedValueList) {
+	public void stream(List<String> commaSeparatedValueList) throws InterruptedException {
 
 		for (String value : commaSeparatedValueList) {
-			try {
 				System.out.println(value);
 				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
 		}
 
 	}
