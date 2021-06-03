@@ -9,7 +9,7 @@ import streamer.IStreamer;
 
 public class BatteryParameterStreamer {
 
-	public void streamValues(List<String> valueListToStream, IStreamer streamer) {
+	public void streamValues(List<String> valueListToStream, IStreamer streamer) throws Exception {
 		streamer.stream(valueListToStream);
 	}
 
