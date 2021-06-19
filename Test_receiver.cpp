@@ -17,6 +17,21 @@ TEST_CASE("NULL pointer is passed to read input stream ") {
   REQUIRE(ifTrueReadSuccess == false);
 }
 
+//Input stream of data was read   
+TEST_CASE("Input stream of data was read") {
+  //eg. of expected input as per sender designed
+  //par1;par2;\n
+  //10;0.1;\n
+  printf("Enter a parameter set in json format: ");
+  char paramSet[lengthOfParamset];
+
+  // Call function under test
+ bool ifReadSuccess = readInputFromConsole(paramSet);
+  
+  //Expected result
+  REQUIRE(ifReadSuccess == true);
+}// End of Input stream of data was read
+
 TEST_CASE( "Max parameter evaluation"){
   
   const int NoOfTest2 = 2;
