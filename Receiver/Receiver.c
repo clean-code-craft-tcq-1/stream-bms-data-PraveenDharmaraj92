@@ -218,28 +218,66 @@ A U T H O R  I D E N T I T Y                                             *//*!
 \author   $Gagandeep
 *//**************************************************************************/
 bool  readInputFromConsole(char *paramSet) {
-
+//
  // bool ifTrueReadSuccess = false;
-  int charNum = 0;
-  int paramSetLength = 0;
+ // int charNum = 0;
+  //int paramSetLength = 0;
 
   /*Not a NULL pointer*/
-  if (paramSet != NULL)
-  {
+  //if (paramSet != NULL)
+ // {
     /* get the first character */
-    paramSet[charNum] = getchar();
+   // paramSet[charNum] = getchar();
 
     /* Read till one set completes */
-    while ( (paramSet[charNum] != EOF) &&(paramSet[charNum] != '\n')){
+    //while ( (paramSet[charNum] != EOF) &&(paramSet[charNum] != '\n')){
       /* gets the next character */
-      paramSet[++charNum] = getchar();
+      //paramSet[++charNum] = getchar();
+   // }
+
+    //paramSetLength = strlen(paramSet);
+    //return  (paramSetLength != 0 ? true : false); // return true if read was successful and string length was not zero;
+  
+
+ // return false; // read was not successful as the pointer was NULL
+  // bool ifTrueReadSuccess = false;
+  int charNum = 0;
+  int paramSetLength = 0;
+  
+  char *buffer;
+  size_t bufsize = 15;
+ // size_t characters;
+
+  buffer = (char *)malloc(bufsize * sizeof(char));
+  if (buffer != NULL)
+  {
+    /* get the first character */
+    buffer[charNum] = getchar();
+
+    /* Read till one set completes */
+    while (buffer[charNum] != '\n') {
+      /* gets the next character */
+      buffer[++charNum] = getchar();
     }
-
-    paramSetLength = strlen(paramSet);
-    return  (paramSetLength != 0 ? true : false); // return true if read was successful and string length was not zero;
+    strcpy(paramSet, buffer);
   }
+  ///*Not a NULL pointer*/
+  //if (paramSet != NULL)
+  //{
+  //  /* get the first character */
+  //  paramSet[charNum] = getchar();
 
-  return false; // read was not successful as the pointer was NULL
+  //  /* Read till one set completes */
+  //  while (paramSet[charNum] != '\n'){
+  //    /* gets the next character */
+  //    paramSet[++charNum] = getchar();
+  //  }
+
+  //  paramSetLength = strlen(paramSet);
+  //  return  (paramSetLength != 0 ? true : false); // return true if read was successful and string length was not zero;
+  //}
+
+  return true; // read was not successful as the pointer was NULL
 }
 
 /*****************************************************************************
