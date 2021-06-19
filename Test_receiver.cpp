@@ -105,7 +105,7 @@ TEST_CASE( "Min parameter evaluation"){
   }
 }
 
-TEST_CASE( "Min parameter evaluation"){
+TEST_CASE( "Max parameter evaluation"){
   
   const int NoOfTest2 = 2;
   float paramMax =0.f;
