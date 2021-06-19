@@ -17,21 +17,6 @@ TEST_CASE("NULL pointer is passed to read input stream ") {
   REQUIRE(ifTrueReadSuccess == false);
 }
 
-//Input stream of data was read   
-TEST_CASE("Input stream of data was read") {
-  //eg. of expected input as per sender designed
-  //par1;par2;\n
-  //10;0.1;\n
-  printf("Enter a parameter set in json format: \n ");
-  char paramSet[lengthOfParamset];
-
-  // Call function under test
- bool ifReadSuccess = readInputFromConsole(paramSet);
-  
-  //Expected result
-  REQUIRE(ifReadSuccess == true);
-}// End of Input stream of data was read
-
 TEST_CASE( "Max parameter evaluation"){
   
   const int NoOfTest2 = 2;
@@ -100,4 +85,33 @@ TEST_CASE("Test if data was extracted correctly")
   //Expected reults
   REQUIRE(paramBuffer[Temperature] == 98);
   REQUIRE((paramBuffer[chargeRate] - 0.1) < infinitesimally_small);
+}
+TEST_CASE( " Simple moving average calculation ")
+{
+  const int NoOfTest = 2;
+  
+  //Input data matrix structure for the test
+  typedef struct inputMatrix1_st {
+    float InputmovingAvg;
+    float previousIndividualParValueSet[movingAvgDataCount];
+  } simpleAvg;
+  
+  //Input and output variables
+  simpleAvg InputsimpleAvg[NoOfTest] = {
+                               {30, {0,0,0,0,0} }, //Random input set 
+                               {0,  {12,13,14,15,16}}, //Random input set  
+
+  };
+
+  float OutputmovingAvg[NoOfTest] = { 0.f, 14.f };
+  
+  for (int  TestCaseCounter = 0 ;TestCaseCounter <  NoOfTest; TestCaseCounter++)
+  { 
+   float movingAvg = InputsimpleAvg[TestCaseCounter].InputmovingAvg;
+   //Call function under test 
+   simpleMovingAvg(InputsimpleAvg[TestCaseCounter].previousIndividualParValueSet, &movingAvg);
+   //Expected result
+   REQUIRE((movingAvg - OutputmovingAvg[TestCaseCounter])< infinitesimally_small);
+  }
+  
 }
