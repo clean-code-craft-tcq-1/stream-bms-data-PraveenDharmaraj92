@@ -23,10 +23,10 @@ TEST_CASE("Input stream of data was read") {
   //par1;par2;\n
   //10;0.1;\n
   printf("Enter a parameter set in json format: ");
-  char paramSet[lengthOfParamset] = {0};
-
+//  char paramSet[lengthOfParamset] = {'a','a','a','a','a','a','a','a','a','a','a','a'};
+  char *paramSet="abcdefghijkl";
   // Call function under test
-  bool ifReadSuccess = readInputFromConsole(paramSet[]);
+  bool ifReadSuccess = readInputFromConsole(paramSet);
  
   //Expected result
   REQUIRE(ifReadSuccess == true);
