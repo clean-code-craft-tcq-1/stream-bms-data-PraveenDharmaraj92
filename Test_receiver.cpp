@@ -128,7 +128,7 @@ TEST_CASE( "Min parameter evaluation"){
     //Call function under test 
     calculateMaxValue(&InputSet2[TestCaseCounter].parameterValue, &paramMax);
 
-    EXPECT(paramMax == OutputParMax[TestCaseCounter]);
+    REQUIRE(paramMax == OutputParMax[TestCaseCounter]);
   }
   
 }
