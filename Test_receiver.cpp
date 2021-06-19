@@ -26,10 +26,10 @@ TEST_CASE("Input stream of data was read") {
   char paramSet[lengthOfParamset];
 
   // Call function under test
-  ifTrueReadSuccess = readInputFromConsole(paramSet);
+ bool ifReadSuccess = readInputFromConsole(paramSet);
   
   //Expected result
-  REQUIRE(ifTrueReadSuccess == true);
+  REQUIRE(ifReadSuccess == true);
 }
 
 TEST_CASE("Test if data was extracted correctly")
