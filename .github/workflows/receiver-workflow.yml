@@ -27,6 +27,6 @@ jobs:
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
       with:
-        name: coverage
+        name: coverage_receiver
         path: ./*.html
         retention-days: 1
