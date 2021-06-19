@@ -26,9 +26,8 @@ TEST_CASE("Input stream of data was read") {
   char paramSet[lengthOfParamset] = {0};
 
   // Call function under test
-// bool ifReadSuccess = readInputFromConsole(paramSet);
-  bool ifReadSuccess =true;
-  Receivermain();
+  bool ifReadSuccess = readInputFromConsole(paramSet[]);
+ 
   //Expected result
   REQUIRE(ifReadSuccess == true);
 }// End of Input stream of data was read
