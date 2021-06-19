@@ -73,3 +73,17 @@ TEST_CASE( "Min parameter evaluation"){
     REQUIRE(paramMin == OutputParMin[TestCaseCounter]);
   }
 }//End Of Min parameter evaluation
+
+TEST_CASE("Test if data was extracted correctly")
+{
+  //Initialize buffer
+  float paramBuffer[NoOfPar] = { 0 };
+  char paramSet1[] = "98;0.1;\n"; //Input stream
+
+  //Call function under test
+  extractParametersFromInputSet(paramSet1, paramBuffer);
+  
+  //Expected reults
+  REQUIRE(paramBuffer[Temperature] == 98);
+  REQUIRE((paramBuffer[chargeRate] - 0.1) < infinitesimally_small);
+}
