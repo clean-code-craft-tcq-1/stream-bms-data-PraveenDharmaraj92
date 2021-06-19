@@ -247,18 +247,13 @@ bool  readInputFromConsole(char *paramSet) {
   char *buffer;
   size_t bufsize = 15;
  // size_t characters;
-
+  
   buffer = (char *)malloc(bufsize * sizeof(char));
   if (buffer != NULL)
   {
-    /* get the first character */
-    buffer[charNum] = getchar();
+    scanf("%s",buffer);
 
-    /* Read till one set completes */
-    while (buffer[charNum] != '\n') {
-      /* gets the next character */
-      buffer[++charNum] = getchar();
-    }
+
     strcpy(paramSet, buffer);
   }
   ///*Not a NULL pointer*/
