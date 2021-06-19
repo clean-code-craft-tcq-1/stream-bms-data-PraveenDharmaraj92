@@ -230,7 +230,7 @@ bool  readInputFromConsole(char *paramSet) {
     paramSet[charNum] = getchar();
 
     /* Read till one set completes */
-    while (paramSet[charNum] != '\n'){
+    while ( (paramSet[charNum] != EOF) &&(paramSet[charNum] != '\n')){
       /* gets the next character */
       paramSet[++charNum] = getchar();
     }
