@@ -6,11 +6,11 @@
 #define infinitesimally_small 0.001
 #define movingAvgDataCount 5
 
-#define TempMax  45.f
+#define TempMax  110.f // adapting as per sender inputs
 #define TempMin  0.f
 
-#define chargeRateMax  0.8f
-#define chargeRateMin  0.f
+#define socMax  0.8f // adapting as per sender inputs
+#define socMin  0.f
 
 typedef enum  par_type
 {
