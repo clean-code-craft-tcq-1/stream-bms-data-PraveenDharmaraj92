@@ -20,6 +20,4 @@ jobs:
     - name: Build receiver for pipe
       run: javac src/main/java/battery/BatteryParameterStreamer.java
       
-    - name pipe input/output
-    java -classpath commandprogram CommandProgram
-      run: ./receivestream |  java -ea -classpath . src.main.java.battery.BatteryParameterStreamer
+    
