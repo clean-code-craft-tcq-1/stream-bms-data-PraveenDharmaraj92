@@ -44,7 +44,7 @@ TEST_CASE( "Max parameter evaluation"){
   } InputMaxSet;
 
   InputMaxSet InputSet2[NoOfTest2] = {
-    { socRateMax, socMin + 0.2f },
+    { socMax, socMin + 0.2f },
     { socMin, socMin + 0.2f }
   };
 
