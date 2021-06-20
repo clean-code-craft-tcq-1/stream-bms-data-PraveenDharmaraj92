@@ -185,9 +185,9 @@ void Receivermain()
         }
       }// end of loop for each parameter
 
-      printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[chargeRate]);
-      printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[chargeRate]);
-      printf(" Current SMA value of Temp : %f, ChargeRate : %f \n ", movingAvg[Temperature], movingAvg[chargeRate]);
+      printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[soc]);
+      printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[soc]);
+      printf(" Current SMA value of Temp : %f, ChargeRate : %f \n ", movingAvg[Temperature], movingAvg[soc]);
 
     }
     /* Wait for 1 sec before next input is streamed */
