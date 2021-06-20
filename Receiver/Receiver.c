@@ -63,8 +63,6 @@ void calculateMinValue(float *individualParameter, float *individualParamMin) {
       *individualParamMin = *individualParameter;
 
     }
-
- // }// end of loop for each parameter
 }
 
 /*****************************************************************************
