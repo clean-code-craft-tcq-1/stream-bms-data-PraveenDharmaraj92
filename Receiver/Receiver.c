@@ -150,8 +150,8 @@ void Receivermain()
 {
   char paramSet[lengthOfParamset];
   float previousParamValueBuffer[NoOfPar][movingAvgDataCount] = { 0.f };
-  float paramMin[NoOfPar] = { TempMax,chargeRateMax };
-  float paramMax[NoOfPar] = { TempMin,chargeRateMin };
+  float paramMin[NoOfPar] = { TempMax,socMax };
+  float paramMax[NoOfPar] = { TempMin,socMin };
   float movingAvg[NoOfPar] = {0.f};
 
   /* Reading the input stream */
