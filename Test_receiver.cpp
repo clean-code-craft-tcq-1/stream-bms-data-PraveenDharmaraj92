@@ -27,7 +27,7 @@ TEST_CASE("Input stream of data was read") {
   
   // Call function under test
   bool ifReadSuccess = readInputFromConsole(paramSet);
- 
+  Receivermain();
   //Expected result
   REQUIRE(ifReadSuccess == true);
 }// End of Input stream of data was read
@@ -130,3 +130,4 @@ TEST_CASE( " Simple moving average calculation ")
   }
   
 }
+
