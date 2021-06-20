@@ -18,7 +18,9 @@ jobs:
       with:
         java-version: 1.8
     - name: Build receiver for pipe
-      run: javac src/main/java/**/*.java
+            mkdir bin
+            shopt -s globstar 
+      run: javac -d bin src/main/java/**/*.java
      
       
     
