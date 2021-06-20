@@ -44,11 +44,11 @@ TEST_CASE( "Max parameter evaluation"){
   } InputMaxSet;
 
   InputMaxSet InputSet2[NoOfTest2] = {
-    { chargeRateMax, chargeRateMin + 0.2f },
-    { chargeRateMin, chargeRateMin + 0.2f }
+    { socRateMax, socMin + 0.2f },
+    { socMin, socMin + 0.2f }
   };
 
-  float OutputParMax[NoOfTest2] = { chargeRateMax, chargeRateMin + 0.2f };
+  float OutputParMax[NoOfTest2] = { socMax, socMin + 0.2f };
 
   for (int TestCaseCounter = 0;TestCaseCounter < NoOfTest2; TestCaseCounter++)
   {
@@ -100,7 +100,7 @@ TEST_CASE("Test if data was extracted correctly")
   
   //Expected reults
   REQUIRE(paramBuffer[Temperature] == 98);
-  REQUIRE((paramBuffer[chargeRate] - 0.1) < infinitesimally_small);
+  REQUIRE((paramBuffer[soc] - 0.1) < infinitesimally_small);
 }
 TEST_CASE( " Simple moving average calculation ")
 {
