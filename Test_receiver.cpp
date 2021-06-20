@@ -27,7 +27,8 @@ TEST_CASE("Input stream of data was read") {
   
   // Call function under test
   bool ifReadSuccess = readInputFromConsole(paramSet);
-  Receivermain();
+ printf("enter inputs");
+  scanf("%s",paramSet);
   //Expected result
   REQUIRE(ifReadSuccess == true);
 }// End of Input stream of data was read
