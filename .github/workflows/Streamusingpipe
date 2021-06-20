@@ -1,4 +1,4 @@
-name: Sending data to receiver using pipe 
+name: Send data using pipe
 
 on: [push, pull_request]
 
