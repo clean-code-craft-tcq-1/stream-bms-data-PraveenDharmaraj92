@@ -219,18 +219,12 @@ A U T H O R  I D E N T I T Y                                             *//*!
 *//**************************************************************************/
 bool  readInputFromConsole(char *paramSet) {
   
-  char *buffer;
-  size_t bufsize = lengthOfParamset;
   int len=0; //Length of string
-  
-  buffer = (char *)malloc(bufsize * sizeof(char));
-  if ((paramSet != NULL)&&(buffer != NULL))
+  if (paramSet != NULL)
   {
-   // scanf("%s",buffer);
     scanf("%s",paramSet);
     len = strlen(paramSet);
-    // len = strlen(buffer);
-    //strcpy(paramSet, buffer);
+    
     paramSet[len] = '\n';
     paramSet[len + 1] = '\0';
    
