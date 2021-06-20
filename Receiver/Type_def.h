@@ -1,6 +1,6 @@
 #pragma once
 #define UNITTEST 1
-#define NoOfParamterSet 6 
+#define NoOfParamterSet 100  //set according to sender
 #define NoOfPar 2 
 #define lengthOfParamset 15
 #define infinitesimally_small 0.001
