@@ -15,5 +15,5 @@
 typedef enum  par_type
 {
   Temperature,
-  chargeRate
+  soc
 }par_type;
