@@ -226,9 +226,11 @@ bool  readInputFromConsole(char *paramSet) {
   buffer = (char *)malloc(bufsize * sizeof(char));
   if ((paramSet != NULL)&&(buffer != NULL))
   {
-    scanf("%s",buffer);
-    len = strlen(buffer);
-    strcpy(paramSet, buffer);
+   // scanf("%s",buffer);
+    scanf("%s",paramSet);
+    len = strlen(paramSet);
+    // len = strlen(buffer);
+    //strcpy(paramSet, buffer);
     paramSet[len] = '\n';
     paramSet[len + 1] = '\0';
    
