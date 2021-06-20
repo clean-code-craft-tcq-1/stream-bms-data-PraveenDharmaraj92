@@ -218,61 +218,24 @@ A U T H O R  I D E N T I T Y                                             *//*!
 \author   $Gagandeep
 *//**************************************************************************/
 bool  readInputFromConsole(char *paramSet) {
-//
- // bool ifTrueReadSuccess = false;
- // int charNum = 0;
-  //int paramSetLength = 0;
-
-  /*Not a NULL pointer*/
-  //if (paramSet != NULL)
- // {
-    /* get the first character */
-   // paramSet[charNum] = getchar();
-
-    /* Read till one set completes */
-    //while ( (paramSet[charNum] != EOF) &&(paramSet[charNum] != '\n')){
-      /* gets the next character */
-      //paramSet[++charNum] = getchar();
-   // }
-
-    //paramSetLength = strlen(paramSet);
-    //return  (paramSetLength != 0 ? true : false); // return true if read was successful and string length was not zero;
-  
-
- // return false; // read was not successful as the pointer was NULL
-  // bool ifTrueReadSuccess = false;
-  int charNum = 0;
-  int paramSetLength = 0;
   
   char *buffer;
-  size_t bufsize = 15;
- // size_t characters;
+  size_t bufsize = lengthOfParamset;
+  int len=0; //Length of string
   
   buffer = (char *)malloc(bufsize * sizeof(char));
-  if (buffer != NULL)
+  if ((paramSet != NULL)&&(buffer != NULL))
   {
     scanf("%s",buffer);
-
-
+    len = strlen(buffer);
     strcpy(paramSet, buffer);
+    paramSet[len] = '\n';
+    paramSet[len + 1] = '\0';
+   
+    return true; 
   }
-  ///*Not a NULL pointer*/
-  //if (paramSet != NULL)
-  //{
-  //  /* get the first character */
-  //  paramSet[charNum] = getchar();
 
-  //  /* Read till one set completes */
-  //  while (paramSet[charNum] != '\n'){
-  //    /* gets the next character */
-  //    paramSet[++charNum] = getchar();
-  //  }
-
-  //  paramSetLength = strlen(paramSet);
-  //  return  (paramSetLength != 0 ? true : false); // return true if read was successful and string length was not zero;
-  //}
-
-  return true; // read was not successful as the pointer was NULL
+  return false; // read was not successful as the pointer was NULL
 }
 
 /*****************************************************************************
