@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Build sender for pipe
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receivestream Receiver/Receiver.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receivestream *.c*
 
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
