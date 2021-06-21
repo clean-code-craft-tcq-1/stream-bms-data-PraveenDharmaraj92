@@ -11,14 +11,18 @@ bool communicationfailure = false;
 
 #if (UNITTEST == 1)
 #define scanf scanf_mock
-void scanf_mock(const char *format, char *ptr);
+char parValueMocked[lengthOfParamset] = {0};
+
+ //Set function to mock the input string which is used for the tests
+void setParInputValue(char inputString[lengthOfParamset]) 
+{
+  strcpy(parValueMocked, inputString);
+}
 
 //Mock scanf function for test cases 
 void scanf_mock(const char *format, char*ptr)
 {
-  char buffer[lengthOfParamset] = "10;0.1;"; // input is certain and fixed
-  strcpy(ptr, buffer);
-  
+  strcpy(ptr, parValueMocked);
 }
 #endif
 
