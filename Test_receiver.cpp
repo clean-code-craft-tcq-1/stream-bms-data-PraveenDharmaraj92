@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+
 //NULL pointer is passed to read input parameter stream 
 TEST_CASE("NULL pointer is passed to read input stream ") {
   // Call function under test
@@ -22,7 +24,11 @@ TEST_CASE("Input stream of data was read") {
   //eg. of expected input as per sender designed
   //par1;par2;\n
   //10;0.1;\n
-  printf("Enter a parameter set in json format: ");
+  
+  /* Setting the inputstring once only in first test as the test are sequential as it will not be overwritten and might throw duplication error  */
+  char inputString[lengthOfParamset]= "10;0.1;";
+  setParInputValue(inputString);
+
   char paramSet[lengthOfParamset] ;
   
   // Call function under test
