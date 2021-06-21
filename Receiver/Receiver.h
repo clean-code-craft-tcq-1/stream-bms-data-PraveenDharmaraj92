@@ -11,4 +11,5 @@ void simpleMovingAvg(float *previousIndividualParValueSet, float movingAvg);
 void reportfailure(int readFailureCounter);
 #if (UNITTEST == 1)
 void scanf_mock(const char *format,char *ptr);
+void setParInputValue(char inputString[lengthOfParamset]) ;
 #endif
