@@ -132,3 +132,28 @@ TEST_CASE( " Simple moving average calculation ")
   
 }
 
+TEST_CASE("Running receivermain functionality and see that no failure occurs")
+{
+   //Initialize comm failure to true   
+   communicationfailure = true;
+   Receivermain();
+   REQUIRE(communicationfailure == false);
+ 
+}
+
+TEST_CASE("No communication failure")
+{ 
+  int readFailureCounter = 3;
+  reportfailure(readFailureCounter);
+  REQUIRE(communicationfailure == false);
+}
+
+/*The test is commented out otherwise it will exit*/
+TEST_CASE("Communication failure occurs")
+{ 
+  int readFailureCounter = commFailureTol+1;
+  reportfailure(readFailureCounter);  
+  //If we do not call exit the expected values would be
+  REQUIRE(communicationfailure == false);
+  REQUIRE(readFailureCounter == 0);
+}
