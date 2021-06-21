@@ -241,7 +241,7 @@ void Receivermain()
       printf(" Current SMA value of Temp : %f, ChargeRate : %f \n ", movingAvg[Temperature], movingAvg[soc]);
 
     }
-    else
+    else //Testing cannot cover else part as paramSet cannot be set to NULL
     {
       readFailureCounter++;
     }
