@@ -6,6 +6,18 @@
 #include <string.h>
 #include "Receiver.h"
 
+#if (UNITTEST == 1)
+#define scanf scanf_mock
+void scanf_mock(const char *format, char *ptr);
+
+//Mock scanf function for test cases 
+void scanf_mock(const char *format, char*ptr)
+{
+  char buffer[lengthOfParamset] = "10;0.1;"; // input is certain and fixed
+  strcpy(ptr, buffer);
+  
+}
+#endif
 
 /*****************************************************************************
 F U N C T I O N    D E S C R I P T I O N
