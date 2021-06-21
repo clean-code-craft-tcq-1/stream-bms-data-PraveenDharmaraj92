@@ -22,4 +22,4 @@ jobs:
       run: mvn install
 
     - name: pipe
-      run:  java -ea -classpath ./src/main/java/battery/BatteryParameterStreamerMain | ./receivestream
+      run:  java -jar ./src/main/java/battery/BatteryParameterStreamerMain.jar | ./receivestream
