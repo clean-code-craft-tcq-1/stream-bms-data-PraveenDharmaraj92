@@ -5,6 +5,9 @@
 #include <stdbool.h>
 #include <string.h>
 #include "Receiver.h"
+ 
+//Global variable used to report occurence of communication failure
+bool communicationfailure = false;
 
 #if (UNITTEST == 1)
 #define scanf scanf_mock
@@ -18,6 +21,32 @@ void scanf_mock(const char *format, char*ptr)
   
 }
 #endif
+
+/*****************************************************************************
+F U N C T I O N    D E S C R I P T I O N
+------------------------------------------------------------------------------
+Function name:  reportfailure                                   *//*!
+\brief       Reports about communication failure 
+             exits code when communication faliure occurs for commFailureTol
+             no. of times
+*//*--------------------------------------------------------------------------
+I N P U T                                                               *//*!
+\param[in]  readFailureCounter : counts readsuccess failure
+*//*--------------------------------------------------------------------------
+O U T P U T                                                             *//*!
+\param[out] communicationfailure : flag to indicate communication failure
+*//*--------------------------------------------------------------------------
+A U T H O R  I D E N T I T Y                                             *//*!
+\author   $Gagandeep
+*//**************************************************************************/
+void reportfailure(int readFailureCounter)
+{
+  if (readFailureCounter > commFailureTol)
+  {   communicationfailure = true;
+      readFailureCounter = 0;
+      exit(0);
+  }
+}
 
 /*****************************************************************************
 F U N C T I O N    D E S C R I P T I O N
@@ -166,6 +195,12 @@ void Receivermain()
   float paramMax[NoOfPar] = { TempMin,socMin };
   float movingAvg[NoOfPar] = {0.f};
 
+  int readFailureCounter = 0;
+  
+  //Initialise the global variable
+  communicationfailure = false;
+
+  
   /* Reading the input stream */
   for (int paramSetCounter = 0; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
     
@@ -202,9 +237,16 @@ void Receivermain()
       printf(" Current SMA value of Temp : %f, ChargeRate : %f \n ", movingAvg[Temperature], movingAvg[soc]);
 
     }
+    else
+    {
+      readFailureCounter++;
+    }
+    
     /* Wait for 1 sec before next input is streamed */
     delay(1);
-
+    
+    /* Report faults */
+    reportfailure(readFailureCounter);
   }
   
 }
