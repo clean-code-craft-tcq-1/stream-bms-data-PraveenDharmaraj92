@@ -5,6 +5,7 @@
 #define lengthOfParamset 15
 #define infinitesimally_small 0.001
 #define movingAvgDataCount 5
+#define commFailureTol 3 //Tolerance for communication failure
 
 #define TempMax  110.f // adapting as per sender inputs
 #define TempMin  0.f
