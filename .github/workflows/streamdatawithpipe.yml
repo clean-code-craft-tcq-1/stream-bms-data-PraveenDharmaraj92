@@ -22,4 +22,8 @@ jobs:
       run: mvn install
 
     - name: pipe
-      run:  java -jar ./src/main/java/battery/BatteryParameterStreamerMain.jar | ./receivestream
+      run:  java -jar /home/runner/work/stream-bms-data-PraveenDharmaraj92/stream-bms-data-PraveenDharmaraj92/target/BatteryMgmtSender-0.0.1-SNAPSHOT.jar | ./receivestream
+
+
+ 
+ 
